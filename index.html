@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#23272A" />
+    <title>carabax.dev :: profile</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="dot-field" aria-hidden="true"></canvas>
+
+    <div class="boot-screen" id="boot-screen" aria-live="polite">
+      <div class="boot-terminal" role="status">
+        <div class="boot-topbar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="boot-lines" id="boot-lines"></div>
+        <div class="boot-progress" aria-hidden="true">
+          <span id="boot-progress"></span>
+        </div>
+      </div>
+    </div>
+
+    <main class="page-shell">
+      <section class="profile-terminal" aria-labelledby="profile-title">
+        <header class="terminal-topbar">
+          <div class="window-dots" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <p>~/profile</p>
+          <div class="language-switch" aria-label="Language">
+            <button class="language-button is-active" type="button" data-lang="en">EN</button>
+            <button class="language-button" type="button" data-lang="ru">RU</button>
+          </div>
+        </header>
+
+        <div class="terminal-body">
+          <p class="prompt-line"><span>carabax@linux</span>:~$ whoami</p>
+          <h1 id="profile-title">carabax</h1>
+          <p class="lead" data-i18n="lead">
+            Programmer and technical admin.
+          </p>
+
+          <div class="command-block" aria-label="About me" data-i18n-aria-label="aboutAria">
+            <p><span class="muted">$ cat about.txt</span></p>
+            <p data-i18n="about">
+              Main stack: Node.js, JavaScript, Python, Discord/Telegram bots, Minecraft servers,
+              hosting, VPNs, automation, and backend utilities.
+            </p>
+          </div>
+
+          <nav class="links-panel" aria-label="Social profiles" data-i18n-aria-label="linksAria">
+            <a class="social-link" href="https://github.com/carabax" target="_blank" rel="noreferrer">
+              <span class="link-icon" aria-hidden="true">git</span>
+              <span>
+                <strong>GitHub</strong>
+                <small>github.com/carabax</small>
+              </span>
+            </a>
+            <a class="social-link" href="https://discord.com/users/912578947747815424" target="_blank" rel="noreferrer">
+              <span class="link-icon" aria-hidden="true">dsc</span>
+              <span>
+                <strong>Discord</strong>
+                <small>@one.carabax</small>
+              </span>
+            </a>
+            <a class="social-link" href="https://t.me/+EHSwY7tCIhk1NWJi" target="_blank" rel="noreferrer">
+              <span class="link-icon" aria-hidden="true">tg</span>
+              <span>
+                <strong>Telegram</strong>
+                <small>t.me/+EHSwY7tCIhk1NWJi</small>
+              </span>
+            </a>
+            <a class="social-link" href="mailto:carabaxik@proton.me">
+              <span class="link-icon" aria-hidden="true">@</span>
+              <span>
+                <strong>Email</strong>
+                <small>carabaxik@proton.me</small>
+              </span>
+            </a>
+          </nav>
+
+          <footer class="terminal-footer">
+            <p><span class="muted">$ status</span> online</p>
+            <button class="copy-button" id="copy-email" type="button">copy email</button>
+          </footer>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
