@@ -9,6 +9,7 @@
   </head>
   <body>
     <canvas id="dot-field" aria-hidden="true"></canvas>
+    <canvas id="matrix-rain" aria-hidden="true"></canvas>
 
     <div class="boot-screen" id="boot-screen" aria-live="polite">
       <div class="boot-terminal" role="status">
@@ -33,6 +34,13 @@
             <span></span>
           </div>
           <p>~/profile</p>
+          <button
+            class="easter-trigger"
+            id="easter-trigger"
+            type="button"
+            aria-label="Open hidden console"
+            data-i18n-aria-label="easterTriggerAria"
+          ></button>
           <div class="language-switch" aria-label="Language">
             <button class="language-button is-active" type="button" data-lang="en">EN</button>
             <button class="language-button" type="button" data-lang="ru">RU</button>
@@ -52,6 +60,11 @@
               Main stack: Node.js, JavaScript, Python, Discord/Telegram bots, Minecraft servers,
               hosting, VPNs, automation, and backend utilities.
             </p>
+          </div>
+
+          <div class="terminal-footer">
+            <p><span class="muted">$ status</span> online</p>
+            <button class="copy-button" id="copy-email" type="button">copy email</button>
           </div>
 
           <nav class="links-panel" aria-label="Social profiles" data-i18n-aria-label="linksAria">
@@ -85,13 +98,65 @@
             </a>
           </nav>
 
-          <footer class="terminal-footer">
-            <p><span class="muted">$ status</span> online</p>
-            <button class="copy-button" id="copy-email" type="button">copy email</button>
-          </footer>
+          <section class="projects-section" aria-label="Active projects" data-i18n-aria-label="projectsAria">
+            <div class="section-command">
+              <span class="muted">$ ls ./active-projects</span>
+              <span class="process-indicator" aria-hidden="true">running</span>
+            </div>
+
+            <div class="projects-grid">
+              <article class="project-card">
+                <div class="project-header">
+                  <h2 data-i18n="projectOneTitle">T-Island Minecraft Discord client</h2>
+                  <span class="project-status" data-i18n="projectOneStatus">in progress</span>
+                </div>
+                <p data-i18n="projectOneDescription">
+                  A custom Discord bot that connects a Minecraft server with its community.
+                </p>
+                <div class="project-tags" aria-label="Stack">
+                  <span>Node.js</span>
+                  <span>Discord.js</span>
+                  <span>Minecraft</span>
+                  <span>API</span>
+                </div>
+              </article>
+            </div>
+          </section>
+
         </div>
       </section>
     </main>
+
+    <div class="secret-console" id="secret-console" hidden>
+      <div class="secret-console-panel" role="dialog" aria-modal="false" aria-label="Hidden console" data-i18n-aria-label="secretConsoleAria">
+        <div class="secret-console-log" id="secret-console-log">
+          <p data-i18n="secretConsoleIntro">console ready</p>
+        </div>
+        <label class="secret-console-input">
+          <span>guest@carabax:~$</span>
+          <input
+            id="secret-command"
+            type="text"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder=""
+            data-i18n-placeholder="secretConsolePlaceholder"
+          />
+        </label>
+      </div>
+    </div>
+
+    <div class="kover-stage" id="kover-stage" aria-hidden="true">
+      <div class="kover">
+        <div class="kover-fringe kover-fringe-left"></div>
+        <div class="kover-face">
+          <span class="kover-eye"></span>
+          <span class="kover-eye"></span>
+        </div>
+        <div class="kover-smile"></div>
+        <div class="kover-fringe kover-fringe-right"></div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
